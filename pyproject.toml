@@ -1,5 +1,5 @@
 [project]
-name = "pyxxl"
+name = "rex-pyxxl"
 authors = [{ name = "fcfangcc", email = "swjfc22@live.com" }]
 description = "A Python executor for XXL-jobs"
 readme = "README.md"
