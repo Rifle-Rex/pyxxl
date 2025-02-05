@@ -127,13 +127,14 @@ class PyxxlRunner:
         app.cleanup_ctx.append(server_info_ctx)
         return app
 
-    def run_executor(self, handle_signals: bool = True) -> None:
+    def run_executor(self, handle_signals: bool = True, loop: Optional[asyncio.AbstractEventLoop] = None) -> None:
         """用aiohttp的web服务器启动执行器"""
         web.run_app(
             self.create_server_app(),
             port=self.config.executor_listen_port,
             host=self.config.executor_listen_host,
             handle_signals=handle_signals,
+            loop=loop
         )
 
     def _runner(self) -> None:
